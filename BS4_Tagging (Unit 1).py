@@ -130,3 +130,25 @@ bs4_2 = BeautifulSoup(my_link, "html.parser")
 
 for child in bs4_2.find("table", {"id": "giftList"}).children:
     print(child)
+# %%
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+my_link = urlopen("https://www.mehrnews.com/")
+
+bs4_2 = BeautifulSoup(my_link, "html.parser")
+
+for child in bs4_2.div.h3.find("a").children:
+    print(child)
+
+# %%
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+link2 = urlopen("https://www.mehrnews.com/")
+bs44 = BeautifulSoup(link2, "html.parser")
+
+
+print(bs44)
