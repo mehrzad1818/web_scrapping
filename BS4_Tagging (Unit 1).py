@@ -103,3 +103,18 @@ class HeadlinesSpider(scrapy.Spider):
         # Extract headlines here
         pass
 # %%
+# %%
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+# It is to handle the link:
+html_link = urlopen("http://www.pythonscraping.com/pages/page1.html")
+
+# It is to create a BS4 object:
+bs4 = BeautifulSoup(html_link.read(), "html.parser")
+
+
+nameList = bs4.findAll("span", {"class": "green"})
+for name in nameList:
+    print(name.get_text())
+# %%
