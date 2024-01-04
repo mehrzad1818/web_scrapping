@@ -118,3 +118,15 @@ nameList = bs4.findAll("span", {"class": "green"})
 for name in nameList:
     print(name.get_text())
 # %%
+
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+my_link = urlopen("http://www.pythonscraping.com/pages/page3.html")
+
+bs4_2 = BeautifulSoup(my_link, "html.parser")
+
+for child in bs4_2.find("table", {"id": "giftList"}).children:
+    print(child)
