@@ -185,3 +185,5 @@ bs.find_all(lambda tag: tag.get_text() == "Or maybe he's only resting?")
 bs.find_all("", text="Or maybe he's only resting?")
 
 # %%
+
+from urllib.request import urlopen
