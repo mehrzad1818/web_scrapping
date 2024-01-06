@@ -213,3 +213,8 @@ except urllib.error.URLError as e:
     print("URL Error:", e.reason)
 except Exception as e:
     print("An error occurred:", str(e))
+
+
+
+print(bs4_object.html.body.h1)
+print(bs4_object.html.h1)
