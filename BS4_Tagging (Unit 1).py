@@ -218,3 +218,8 @@ except Exception as e:
 
 print(bs4_object.html.body.h1)
 print(bs4_object.html.h1)
+
+the_html_link = urlopen("https://en.wikipedia.org/wiki/Informant")
+
+bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
+bs = BeautifulSoup(the_html_link, "html.parser")
