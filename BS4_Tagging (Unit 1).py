@@ -223,3 +223,44 @@ the_html_link = urlopen("https://en.wikipedia.org/wiki/Informant")
 
 bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
 bs = BeautifulSoup(the_html_link, "html.parser")
+
+
+
+# %%
+
+# Code written with beautifulsoup, html.parser
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+the_html_link = urlopen("https://en.wikipedia.org/wiki/Informant")
+
+bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
+bs = BeautifulSoup(the_html_link, "html.parser")
+
+print(bs4_object.h1)
+print(bs4_object.h1)
+print(bs4_object.html.body.h1)
+print(bs4_object.html.h1)
+
+# %%
+# The same code as above, but with lxml parser
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+the_html_link = urlopen("http://www.pythonscraping.com/pages/page1.html")
+
+bs4_object = BeautifulSoup(the_html_link.read(), "lxml")
+bs = BeautifulSoup(the_html_link, "lxml")
+
+print(bs4_object.h1)
+print(bs4_object.h1)
+print(bs4_object.html.body.h1)
+print(bs4_object.html.h1)
+
+
+# %%
+# The same code as above, but with html5lib
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
