@@ -187,3 +187,29 @@ bs.find_all("", text="Or maybe he's only resting?")
 # %%
 
 from urllib.request import urlopen
+
+import urllib.request
+from bs4 import BeautifulSoup
+
+
+try:
+    url = "https://en.wikipedia.org/wiki/Informant"
+    response = urllib.request.urlopen(url)
+    html = response.read()
+
+    bs4_object = BeautifulSoup(html, "html.parser")
+
+    # Find the first h1 tag in the HTML
+    h1_tag = bs4_object.find("h1")
+
+    if h1_tag:
+        print("First h1 tag found: ", h1_tag.text)
+    else:
+        print("No h1 tag found")
+
+except urllib.error.HTTPError as e:
+    print("HTTP Error:", e.code, "-", e.reason)
+except urllib.error.URLError as e:
+    print("URL Error:", e.reason)
+except Exception as e:
+    print("An error occurred:", str(e))
