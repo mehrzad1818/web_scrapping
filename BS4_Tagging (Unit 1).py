@@ -259,6 +259,7 @@ print(bs4_object.h1)
 print(bs4_object.html.body.h1)
 print(bs4_object.html.h1)
 
+######################################################NEWLYADDEDCODES################################################
 
 # %%
 # The same code as above, but with html5lib
@@ -297,7 +298,8 @@ pages = set()
 def getLinks(pageUrl):
 global pages
 html = urlopen('http://en.wikipedia.org{}'.format(pageUrl))
-bs = BeautifulSoup(html, 'html.parser') for link in bs.find_all('a', href=re.compile('^(/wiki/)')): if 'href' in link.attrs: if link.attrs['href'] not in pages:
+bs = BeautifulSoup(html, 'html.parser') for link in bs.find_all('a', href=re.compile('^(/wiki/)')): 
+    if 'href' in link.attrs: if link.attrs['href'] not in pages:
 #We have encountered a new page
 newPage = link.attrs['href'] print(newPage) pages.add(newPage) getLinks(newPage)
 getLinks('')
