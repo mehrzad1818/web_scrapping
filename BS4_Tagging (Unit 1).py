@@ -354,3 +354,9 @@ def get_html_content(url):
     except requests.exceptions.RequestException as e:
         print(f"Error occurred: {e}")
         return None
+
+def scrape_html(url):
+    html_content = get_html_content(url)
+    if html_content:
+        soup = BeautifulSoup(html_content, "lxml")
+        return soup
