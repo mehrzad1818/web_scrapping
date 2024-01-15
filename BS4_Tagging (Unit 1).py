@@ -360,3 +360,10 @@ def scrape_html(url):
     if html_content:
         soup = BeautifulSoup(html_content, "lxml")
         return soup
+
+def get_element_text(soup, tag):
+    element = soup.find(tag)
+    if element:
+        return element.text.strip()
+    else:
+        return None
