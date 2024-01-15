@@ -335,3 +335,22 @@ class Solution:
                 return False
 
         return True
+
+
+
+## Optimization
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+
+def get_html_content(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.content
+    except requests.exceptions.RequestException as e:
+        print(f"Error occurred: {e}")
+        return None
