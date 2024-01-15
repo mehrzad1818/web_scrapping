@@ -367,3 +367,12 @@ def get_element_text(soup, tag):
         return element.text.strip()
     else:
         return None
+
+
+url = "http://www.pythonscraping.com/pages/page1.html"
+soup = scrape_html(url)
+
+if soup:
+    print(get_element_text(soup, "h1"))
+    print(get_element_text(soup, "h2"))
+    print(get_element_text(soup, "h3"))
