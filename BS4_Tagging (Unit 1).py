@@ -376,3 +376,7 @@ if soup:
     print(get_element_text(soup, "h1"))
     print(get_element_text(soup, "h2"))
     print(get_element_text(soup, "h3"))
+
+
+
+This has been updated
