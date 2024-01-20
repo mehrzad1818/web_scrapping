@@ -380,3 +380,21 @@ if soup:
 
 
 This has been updated
+
+
+
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+the_html_link = urlopen("https://en.wikipedia.org/wiki/Informant")
+
+bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
+
+# Print the first h1 element
+print(bs4_object.h1)
+
+# Print all h1 elements
+h1_elements = bs4_object.find_all("h1")
+for h1 in h1_elements:
+    print(h1)
