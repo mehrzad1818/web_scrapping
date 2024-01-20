@@ -398,3 +398,26 @@ print(bs4_object.h1)
 h1_elements = bs4_object.find_all("h1")
 for h1 in h1_elements:
     print(h1)
+
+
+
+
+
+
+
+from urllib.request import urlopen
+from urllib.error import URLError, HTTPError
+from bs4 import BeautifulSoup
+
+try:
+    the_html_link = urlopen("http://www.pythonscraping.com/pages/page1.html")
+
+    bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
+
+    # Use the bs4_object for further processing
+    # ...
+    
+except URLError as e:
+    print("URL Error:", e)
+except HTTPError as e:
+    print("HTTP Error:", e)
