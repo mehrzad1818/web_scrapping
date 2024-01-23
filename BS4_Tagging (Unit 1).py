@@ -447,3 +447,13 @@ newPage = link.attrs['href']
 print('-'*20)
 print(newPage) pages.add(newPage) getLinks(newPage)
 getLinks('')
+
+
+
+
+allExtLinks = set() allIntLinks = set()
+def getAllExternalLinks(siteUrl):
+html = urlopen(siteUrl) domain = '{}://{}'.format(urlparse(siteUrl).scheme, urlparse(siteUrl).netloc) bs = BeautifulSoup(html, 'html.parser') internalLinks = getInternalLinks(bs, domain) externalLinks = getExternalLinks(bs, domain) for link in externalLinks: if link not in allExtLinks: allExtLinks.add(link)
+print(link)
+for link in internalLinks: if link not in allIntLinks: allIntLinks.add(link) getAllExternalLinks(link)
+allIntLinks.add('http://oreilly.com') getAllExternalLinks('http://oreilly.com')
