@@ -423,7 +423,7 @@ except HTTPError as e:
     print("HTTP Error:", e)
 
 
-
+# THis is the more advanced approach to this
 
 
 from urllib.request import urlopen
