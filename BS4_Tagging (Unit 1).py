@@ -276,6 +276,7 @@ bs = BeautifulSoup(html, 'html.parser')
 for link in bs.find('div', {'id':'bodyContent'}).find_all( 'a', href=re.compile('^(/wiki/)((?!:).)*$')):
 if 'href' in link.attrs: print(link.attrs['href'])
 
+#There might be several issues with the  codes below:
 
 
 from urllib.request import urlopen
