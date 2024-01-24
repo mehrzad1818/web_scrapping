@@ -449,7 +449,7 @@ print(newPage) pages.add(newPage) getLinks(newPage)
 getLinks('')
 
 
-
+# What is your idea about this part of the code?
 
 allExtLinks = set() allIntLinks = set()
 def getAllExternalLinks(siteUrl):
