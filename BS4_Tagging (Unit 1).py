@@ -90,7 +90,7 @@ try:
 
 
 
-
+# This script uses scrapy instead of BS4 to engage in the same task. 
 #%%
 
 import scrapy
