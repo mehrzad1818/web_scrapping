@@ -380,11 +380,11 @@ if soup:
 
 
 
-This has been updated
+# This has been updated
 
 
 
-
+# We first need to import some packages:
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
