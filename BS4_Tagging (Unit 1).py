@@ -518,3 +518,38 @@ def crawl(url):
 # Start crawling from a specific URL
 start_url = 'https://www.example.com'
 crawl(start_url)
+
+
+
+
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+def scrape_images(url):
+    # Send a GET request to the website
+    response = requests.get(url)
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Find all the image tags and extract the source URLs
+    images = soup.find_all('img')
+    for image in images:
+        src = image.get('src')
+        if src:
+            absolute_url = urljoin(url, src)
+
+            # Send a GET request to the image URL
+            image_response = requests.get(absolute_url, stream=True)
+
+            # Check if the image is larger than 2 megapixels
+            if 'content-length' in image_response.headers:
+                content_length = int(image_response.headers['content-length'])
+                if content_length > 2 * 1024 * 1024:
+                    print('Image URL:', absolute_url)
+                    print('Image size:', content_length, 'bytes')
+
+# Start scraping images from a specific URL
+start_url = 'https://www.example.com'
+scrape_images(start_url)
