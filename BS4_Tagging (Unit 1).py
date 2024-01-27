@@ -458,3 +458,25 @@ html = urlopen(siteUrl) domain = '{}://{}'.format(urlparse(siteUrl).scheme, urlp
 print(link)
 for link in internalLinks: if link not in allIntLinks: allIntLinks.add(link) getAllExternalLinks(link)
 allIntLinks.add('http://oreilly.com') getAllExternalLinks('http://oreilly.com')
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+# Send a GET request to the website
+url = 'https://www.example.com'
+response = requests.get(url)
+
+# Parse the HTML content using BeautifulSoup
+soup = BeautifulSoup(response.content, 'html.parser')
+
+# Find and extract specific elements from the HTML
+title = soup.find('title').get_text()
+paragraphs = soup.find_all('p')
+
+# Print the extracted data
+print('Title:', title)
+print('Paragraphs:')
+for paragraph in paragraphs:
+    print(paragraph.get_text())
