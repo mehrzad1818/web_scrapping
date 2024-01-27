@@ -480,3 +480,41 @@ print('Title:', title)
 print('Paragraphs:')
 for paragraph in paragraphs:
     print(paragraph.get_text())
+
+
+
+
+
+
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+def crawl(url):
+    # Send a GET request to the website
+    response = requests.get(url)
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Find and extract specific elements from the HTML
+    title = soup.find('title').get_text()
+    paragraphs = soup.find_all('p')
+
+    # Print the extracted data
+    print('Title:', title)
+    print('Paragraphs:')
+    for paragraph in paragraphs:
+        print(paragraph.get_text())
+
+    # Find all the anchor tags and extract the links
+    links = soup.find_all('a')
+    for link in links:
+        href = link.get('href')
+        if href:
+            absolute_url = urljoin(url, href)
+            crawl(absolute_url)
+
+# Start crawling from a specific URL
+start_url = 'https://www.example.com'
+crawl(start_url)
