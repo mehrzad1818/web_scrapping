@@ -1,4 +1,4 @@
-#Oprimized 
+#Optimized 
 # %%
 
 # Code written with beautifulsoup, html.parser
