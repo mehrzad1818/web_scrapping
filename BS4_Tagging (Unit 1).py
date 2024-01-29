@@ -572,3 +572,12 @@ exit()
 import requests 
 from bs4 import BeautifulSoup
 import re
+
+
+
+
+# Find all the text elements (e.g., paragraphs, headings, etc.) you want to scrape
+text_elements = soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span'])
+# Extract the text from each element and concatenate them into a single string
+scraped_text = ' '.join(element.get_text() for element in text_elements)
+print(scraped_text)
