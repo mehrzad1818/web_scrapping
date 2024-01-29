@@ -553,3 +553,15 @@ def scrape_images(url):
 # Start scraping images from a specific URL
 start_url = 'https://www.example.com'
 scrape_images(start_url)
+
+
+
+
+url = 'https://example.com'&nbsp; # Replace this with the URL of the website you want to scrape
+response = requests.get(url)
+# Check if the request was successful
+if response.status_code == 200:
+html_content = response.content
+else:
+ print("Failed to fetch the website.")
+exit()
