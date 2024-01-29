@@ -565,3 +565,10 @@ html_content = response.content
 else:
  print("Failed to fetch the website.")
 exit()
+
+
+
+
+import requests 
+from bs4 import BeautifulSoup
+import re
