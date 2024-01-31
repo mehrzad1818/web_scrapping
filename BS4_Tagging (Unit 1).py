@@ -628,3 +628,11 @@ class QuotesSpider(scrapy.Spider):
         page = response.url.split("/")[-2]
         filename = f"quotes-{page}.html"
         Path(filename).write_bytes(response.body)
+
+
+
+for quote in response.css("div.quote"):
+    text = quote.css("span.text::text").get()
+    author = quote.css("small.author::text").get()
+    tags = quote.css("div.tags a.tag::text").getall()
+    print(dict(text=text, author=author, tags=tags))
