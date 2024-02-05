@@ -636,3 +636,6 @@ for quote in response.css("div.quote"):
     author = quote.css("small.author::text").get()
     tags = quote.css("div.tags a.tag::text").getall()
     print(dict(text=text, author=author, tags=tags))
+
+
+Code UPdated Up to Here
