@@ -1,7 +1,4 @@
-#Optimized 
-# %%
-This is to add a few lines of code
-# Code written with beautifulsoup, html.parser
+
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
