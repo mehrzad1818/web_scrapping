@@ -191,7 +191,7 @@ print(link)
 for link in internalLinks: if link not in allIntLinks: allIntLinks.add(link) getAllExternalLinks(link)
 allIntLinks.add('http://oreilly.com') getAllExternalLinks('http://oreilly.com')
 
-
+23456
 
 import requests
 from bs4 import BeautifulSoup
