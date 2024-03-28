@@ -1,8 +1,8 @@
-I am starting right now
+
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-# THis part of the code handles the links:
+# This part of the code handles the links:
 the_html_link = urlopen("https://en.wikipedia.org/wiki/Informant")
 
 bs4_object = BeautifulSoup(the_html_link.read(), "html.parser")
