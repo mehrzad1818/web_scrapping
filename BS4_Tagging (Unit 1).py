@@ -78,7 +78,7 @@ from urllib.error import URLError
 from urllib.error import HTTPError
 
 
-
+This
 try:
     the_html_link = urlopen("http://www.pythonscraping.com/pages/page1.html")
 
